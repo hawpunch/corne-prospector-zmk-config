@@ -1,0 +1,3 @@
+/* The dongle (central) is the only device that reads the keymap,
+ * so it just pulls in the shared keymap. Edit corne.keymap. */
+#include "corne.keymap"

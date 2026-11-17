@@ -1,0 +1,20 @@
+---
+# Board names use ZMK's Zephyr 4.1 style (ZMK main).
+#   nice_nano//zmk  = nice!nano v2   (nice_nano@1//zmk would be the old v1)
+#   xiao_ble//zmk   = Seeed XIAO nRF52840 (the Prospector's controller)
+include:
+  # Both halves are BLE peripherals; the Prospector dongle is the central.
+  - board: nice_nano//zmk
+    shield: corne_left nice_view_adapter nice_view
+  - board: nice_nano//zmk
+    shield: corne_right nice_view_adapter nice_view
+
+  # Prospector dongle (central, USB to the computer)
+  - board: xiao_ble//zmk
+    shield: corne_dongle prospector_adapter
+
+  # Utility images: flash these first / when pairing gets stuck
+  - board: nice_nano//zmk
+    shield: settings_reset
+  - board: xiao_ble//zmk
+    shield: settings_reset
